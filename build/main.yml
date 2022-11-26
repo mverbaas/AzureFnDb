@@ -1,0 +1,11 @@
+stages:
+  - stage: build
+    displayName: Build Code
+    jobs:
+      - job: buildDatabase
+        displayName: Build buildDatabase
+        steps:
+          - task: MSBuild@1
+            inputs:
+              configuration: release
+              solution: src\db\DbaInventory\DbaInventory.sqlproj

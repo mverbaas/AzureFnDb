@@ -6,6 +6,11 @@ stages:
         displayName: Build buildDatabase
         steps:
           - task: MSBuild@1
+            displayName: Build databases project
             inputs:
               configuration: release
               solution: src\db\DbaInventory\DbaInventory.sqlproj
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: $(System.DefaultWorkingDirectory)/**/*.dacpac
+              artifactName: drop

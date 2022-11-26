@@ -12,6 +12,7 @@ stages:
               solution: src\db\DbaInventory\DbaInventory.sqlproj
           - task: PowerShell@2
             inputs:
+              targetType: inline
               script: get-childitem -path $(System.DefaultWorkingDirectory) -recurse
           - task: PublishPipelineArtifact@1
             inputs:

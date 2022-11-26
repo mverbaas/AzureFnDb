@@ -1,3 +1,6 @@
+pool:
+  name: windows-latest
+
 stages:
   - stage: build
     displayName: Build Code

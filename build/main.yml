@@ -10,6 +10,9 @@ stages:
             inputs:
               configuration: release
               solution: src\db\DbaInventory\DbaInventory.sqlproj
+          - task: PowerShell@2
+            inputs:
+              script: get-childitem -path $(System.DefaultWorkingDirectory) -recurse
           - task: PublishPipelineArtifact@1
             inputs:
               targetPath: $(System.DefaultWorkingDirectory)/**/*.dacpac

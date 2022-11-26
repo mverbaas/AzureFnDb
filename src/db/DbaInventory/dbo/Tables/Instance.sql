@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[Instance]
+(
+  [Id] INT NOT NULL IDENTITY(1,1)
+  , [Name] VARCHAR(128) NOT NULL
+  , [CreateDate] DATETIME2 NOT NULL CONSTRAINT [DF_Instance_CreateDate] DEFAULT GETDATE()
+  , CONSTRAINT [PK_Instance_Id] PRIMARY KEY CLUSTERED ([Id])
+  , CONSTRAINT [UQ_Instance_Name] UNIQUE ([Name])
+)

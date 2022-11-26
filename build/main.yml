@@ -1,5 +1,5 @@
 pool:
-  name: windows-2022
+  vmImage: 'windows-latest'
 
 stages:
   - stage: build

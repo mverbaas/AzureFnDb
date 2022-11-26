@@ -1,5 +1,5 @@
 pool:
-  name: windows-latest
+  name: windows-2022
 
 stages:
   - stage: build

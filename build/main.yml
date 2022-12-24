@@ -13,7 +13,7 @@ stages:
             inputs:
               configuration: release
               solution: src\db\DbaInventory\DbaInventory.sqlproj
-              msbuildArguments: NetCoreBuild=true
+              msbuildArguments: /p:"NetCoreBuild=true"
           - task: PowerShell@2
             inputs:
               targetType: inline

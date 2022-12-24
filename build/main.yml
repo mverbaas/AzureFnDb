@@ -8,8 +8,6 @@ stages:
       - job: buildDatabase
         displayName: Build buildDatabase
         steps:
-          - task: NuGetRestore@1
-            displayName: NuGetRestore
           - task: MSBuild@1
             displayName: Build databases project
             inputs:

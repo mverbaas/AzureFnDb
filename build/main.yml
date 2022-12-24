@@ -8,12 +8,14 @@ stages:
       - job: buildDatabase
         displayName: Build buildDatabase
         steps:
+          - task: NuGetRestore@1
+            displayName: NuGetRestore
           - task: MSBuild@1
             displayName: Build databases project
             inputs:
               configuration: release
               solution: src\db\DbaInventory\DbaInventory.sqlproj
-              msbuildArguments: /p:NetCoreBuild=true
+              msbuildArguments: NetCoreBuild=true
           - task: PowerShell@2
             inputs:
               targetType: inline
